@@ -1,0 +1,1 @@
+﻿case"easyarticle" str=WebOrigin_tag_easyarticle(tag,invalue)

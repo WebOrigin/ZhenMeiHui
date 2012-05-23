@@ -1,0 +1,16 @@
+﻿img{border:none;}
+#WebOriginubb{display:block;clear:both;width:100%;}
+#WebOriginubb span{display:block;float:left;padding-right:2px;}
+#WebOriginubb span a:link,#WebOriginubb span a:visited,#WebOriginubb span a:active {clear:both;display:block;border:1px solid #FFF;}
+#WebOriginubb span a:hover{border:1px solid #69F;}
+#WebOriginubb span em {clear:both;display:block;position:absolute;padding:10px 0px 5px 10px;z-index:999;}
+#WebOriginubb span em#WebOriginCMS_Color{width:102px;display:block;background:#EEE;border:1px solid #DCD2C7;}
+#WebOriginubb span em#WebOriginCMS_Color a:link,#WebOriginubb span em#WebOriginCMS_Color a:visited,#WebOriginubb span em#WebOriginCMS_Color a:active
+	{clear:none;display:block;float:left;width:10px;height:10px;margin-right:5px;margin-bottom:5px;line-height:0px;font-size:0px;border:1px solid #FFF;}
+#WebOriginubb span em#WebOriginCMS_Color a:hover{border:1px solid #333;}
+
+#WebOriginubb span em#WebOriginCMS_Emo{width:170px;display:block;background:#EEE;border:1px solid #DCD2C7;}
+#WebOriginubb span em#WebOriginCMS_Emo a:link,#WebOriginubb span em#WebOriginCMS_Emo a:visited,#WebOriginubb span em#WebOriginCMS_Emo a:active
+	{clear:none;display:block;float:left;margin-right:5px;margin-bottom:5px;line-height:0px;font-size:0px;border:1px solid #FFF;}
+#WebOriginubb span em#WebOriginCMS_Emo a:hover{border:1px solid #333;}
+#WebOriginubb span em#WebOriginCMS_Emo a img{width:20px;height:20px;}

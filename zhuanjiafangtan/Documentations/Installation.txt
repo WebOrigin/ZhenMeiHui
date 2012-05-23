@@ -1,0 +1,65 @@
+FLASH PAGE FLIP INSTALLATION (Basic-Xml Version)
+
+www.FlashPageFlip.com
+
+//////////////////////////////////////////////////
+
+STEP BY STEP INSTALLATION
+-------------------------
+1. There are 3 folders in ZIP package file.
+2. You can find an sample "FLA files" in the "Source folder", documents of install and usage in the "Documentations folder", and FPF's system files in the "Basic-Xml Version folder".
+3. Firstly please open with any text editor "Config.asp or Config.php file" in the "Basic-Xml Version folder".
+4. There are 1 sections in the Config file.
+5. Type your email account infos in the "E-MAIL SETTINGS" section areas. It was stated in the "Config.asp or Config.php file".
+6. If you need, you can change with any text editor "Lang.txt file" in the "Basic-Xml Version > txt folder".
+7. If you want, you can rename and swap your own mp3 files with "mp3 files" in the "Basic-Xml Version > mp3 folder".
+8. Now you are ready for sending Flash Page Flip files to your server.
+9. Upload with any FTP software all folders and files in the "Basic-Xml Version folder" to your web directory.
+10. Finally you can look at the web directory and click to your publication (like www.yoursite.com/yourpublication).
+
+PUBLISHING YOUR PUBLICATION
+---------------------------
+
+Open with Notepad Pages.xml in xml folder. Write the names of your IMAGE (JPEG, GIF, and PNG) or SWF formatted pages on XML file (xml/Pages.xml)
+
+For instance,
+
+You can make vertical, horizontal or square flipping books. You don't have to use 368x450 px dimensions as online demos. Edit width and height by width="400" height="600" (it must becomes same pages dimensions) and edit others items (for colors) in pages.xml file. You can use larger pages in the FPF but it's better not to use many and too large sized pages. We advise you to separate into a few parts. For good quality texts, you can use vectoral texts in SWF formatted pages.
+
+You want 8 pages in FPF, please remove
+
+     <page_src="pages/page9.jpg"/>
+     <page_src="pages/page10.swf"/>
+     <page_src="pages/page11.jpg"/>
+     <page_src="pages/page12.swf"/>
+     <page_src="pages/page13.jpg"/>
+     <page_src="pages/page14.swf"/>
+
+in xml/Pages.xml file.
+
+If you want 18 pages FPF, please add your pages into xml/Pages.xml file. Like that,
+
+     <page_src="pages/page15.jpg"/>
+     <page_src="pages/page16.swf"/>
+     <page_src="pages/page17.jpg"/>
+     <page_src="pages/page18.swf"/>
+
+Reorganize (add or remove) pages in pages folder.
+
+Please look at the FLA files of sample pages in source folder. Those FLA files can guide you as you want. If you aren't advanced user please don't change name or path of files. You can change the name of buttons with Lang.txt file. FPF language file (txt/Lang.txt) supports many special characters when saving as we declared. Ensure you did according to ReadMe.txt file. Finally you can publish (Copy all files and folder in the “Basic-Xml Version” folder and paste to your directory) it offline (in CD, DVD, etc.) or any online server.
+
+FAQ
+---
+http://www.flashpageflip.com/FAQ.asp?do=Show-All
+
+
+SUPPORT
+-------
+
+PAY ATTENTION!
+
+The same questions will not be replied which there are on the online FAQ system.
+
+We appreciate your interest in us. Surely we reply to your inquiry however unfortunately we won't respond if there are same questions and answers on the FAQ page. Therefore please firstly look at the About FPF, Documentations and Product's pages. If you have any question please search in the FAQ system. If you cannot find any solution please summarize and send us a short email. The content of your e-mail is being considered and we will get back to you soonest.
+
+support@flashpageflip.com

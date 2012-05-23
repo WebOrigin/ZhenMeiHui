@@ -1,0 +1,189 @@
+FLASH PAGE FLIP FAQ (Basic-Xml Version)
+
+www.FlashPageFlip.com
+
+//////////////////////////////////////////////////
+
+
+* What is Flash Page Flip?
+------------------------------------------------------------
+Flash Page Flip (FPF) is a ready to use SWF object. It’s not a Flash component. You can easily add your SWF or IMAGE (JPEG, GIF, and PNG) files into FPF package. You don't have to use Flash software to make your flipping book by FPF (except for Source Code Versions).
+
+
+* Can I see a comparison between the versions?
+------------------------------------------------------------
+We show our online demos and some live users of FPF in Online Demo page. Please look at them for features and customizations. http://www.flashpageflip.com/Online-Demo.asp Pro PHP and ASP Versions have same features however their web server requirements are different. With Pro Versions, you have to install admin panel to make your flipping books. You cannot use it offline and on unavailable server. You have to use it on available web server. Please firstly ensure that your web server has to provide requirements. Working of Basic XML Version works like Free Version. You can use it if you can use Free FPF without any difficulty or you haven’t server which supports ASP or PHP. You can use it offline or online.
+
+
+* Which version of Flash you use to construct this software?
+------------------------------------------------------------
+Flash Page Flip is developed with Adobe Flash 8 and ActionScript 2.0
+
+
+* Is there an executable file to install?
+------------------------------------------------------------
+FPF is not an executable software. Please look at the documentation for instructions.
+
+
+* Which browsers does your object support?
+------------------------------------------------------------
+FPF works without any problem on last versions of Internet Explorer, Mozilla Firefox, Safari and other principal browsers. It needs Flash Player 8 or +
+
+
+* How can I use it right to left like Arabic/Hebrew books?
+------------------------------------------------------------
+LeftBegin option is not another version, it’s not Arabic/Hebrew Version. It’s same version but firstly FPF becomes to be opened like current, then it automatically goes to the last page. For that reason it hasn’t “go to page” button. It may cause confusion. If you want to use it you can just rename MagazineLeftBegin.swf to Magazine.swf file.
+
+
+* Can I use PDF files with your object?
+------------------------------------------------------------
+FPF doesn’t support PDF file format as other PDF based page flip engines. Therefore it doesn't need any PDF component on your server. You don't have to use it on our server or you don't pay any extra charge monthly or yearly. You need to convert your PDF file page by page into SWF or JPEG files. We don't have an advice for this. You may find the details about that in those pages: http://www.google.com/search?hl=en&q=pdf+to+jpg and http://www.google.com/search?hl=en&q=pdf+to+swf
+
+
+* Is it possible to change dimensions of pages?
+------------------------------------------------------------
+You can make vertical, horizontal or square flipping books by edit width and height (it must become same with page's dimensions). We recommend maximum size 1024x1024 px and resolution 72dpi.
+
+
+* Can I use sound and video on the pages?
+------------------------------------------------------------
+Yes. You can use SWF pages with embedded, uploaded sounds and video-files. To include video, please refer to the sample file (07.fla) in the "/Source" folder. The video doesn't have to be embedded on the timeline as I've shown (dynamically loading an FLV or SWF would work fine too) but the key is that the video CAN'T start on the first frame. This WILL cause problems. I'd recommend using the onVisible and onInvisible functions mentioned above to control the video playback.
+
+
+
+* Can I use WMV, MP4, AVI, MPEG files with your object?
+------------------------------------------------------------
+Flash Page Flip is not supported these formats. But you can use FLV videos or MP3 sounds in your SWF formatted pages.
+
+
+* Can I use contents and links on pages?
+------------------------------------------------------------
+Yes. You can use SWF pages with active elements (buttons, for example) in them.
+
+
+* How can I create link easy to another pages?
+------------------------------------------------------------
+Please refer 02.fla in the source folder. Also you can use following code on your button for link to another pages:
+
+on(rollOver, dragOver){
+                _root.canflip=false; // flipping disabled
+}
+on(rollOut, dragOut, releaseOutside){
+                _root.canflip=true; // flipping enabled
+}
+on(release){
+                _root.canflip=true; // flipping enabled
+                _root.gotoPage(4,true); // go to page
+}
+
+
+* Is there a way to remove membership function on the pages?
+------------------------------------------------------------
+Users can be members of your publications that we show it on online demos. If you want to remove membership blockage on the pages, you can type “+1” then total pages to membership page in admin panel (i.e. you have 50 pages you can type “51”). You don’t have to edit the Source Codes to make it. If you can edit FPF Source Codes, when you completely remove membership objects you can still use print feature but you cannot use marker and note features because these need member data (i.e. Member ID).
+
+
+* How can I change background sound?
+------------------------------------------------------------
+You can select bgimage parameter (bgimage="0") in XML file, if you don't use bg image and sound. Sound file is called external by Magazine.swf file. You can save own sound files as same names when you change loop sound. For example, you can select bgimage="1" (park) in XML file also you can rename silent.mp3 to park.mp3 in mp3 folder.
+
+
+* Can I change the name of buttons?
+------------------------------------------------------------
+Yes. You can change with Lang.txt file. Versions of Flash Page Flip support so many languages. FPF language file (txt/Lang.txt) supports many special characters when saving as we declared, although FPF doesn't support some characters. Nevertheless FPF Source Code Versions supports all special characters if you embed used font to dynamic text areas in FLA file.
+
+
+* Is it possible to change background image?
+------------------------------------------------------------
+You can select the background image, color, or sound by selecting bgimage parameter but it’s not possible to put your own background images without the source files. bgimage="0" (no bg image)(“bgcolor” becomes active) bgimage="1" (park) bgimage="2" (beach) bgimage="3" (office)
+
+
+* How can I change background image with Source Codes?
+------------------------------------------------------------
+You are able to swap your background images with beach.jpg (500x375 px), office.jpg (256x256 px), park.jpg (380x253 px) in linkages folder from Magazine.fla library or you can edit/develop .fla file for adding your new images. Please open Magazine.fla file, look at the graphics folder in the Library. Swap beachThumb.jpg, officeThumb.jpg, parkThumb.jpg with your image for button images.
+
+
+* How can I cancel to tile background with Source Codes?
+------------------------------------------------------------
+You have to remove those codes in the last frame of functions layer.
+//get background and apply
+if(bgImage>0){
+                var tile:BitmapData = BitmapData.loadBitmap("pattern" + bgImage);
+                _root.beginBitmapFill(tile);
+…
+                _root.pageNav.alertArea.gotoAndStop(2);
+}
+
+
+* Does FPF support a print all pages at once function?
+------------------------------------------------------------
+You can't print all pages at once, this feature is not available for Flash Page Flip. But you can purchase Source Code Version for customize software yourself.
+
+
+* How can I increase zoom feature with Source Codes?
+------------------------------------------------------------
+You can edit these codes in the Magazine.fla file for zoom feature. When you increase 1.5, the level of zoom will be higher.
+
+layer:functions
+frame:4
+line:291
+
+if(((pw*2)/100)*pages._xscale>(pw*2)*1.5) return;
+
+
+* Can I start Flash Page Flip in fullscreen?
+------------------------------------------------------------
+Full screen opening is not possible for Flash Page Flip.
+
+
+* How can I change shadow effect in the Pages.fla file?
+------------------------------------------------------------
+Please open Pages.fla file. Enter into frontShadow MC and enter again into frontShadowIn MC. Select item and change color value.
+
+
+* Could you do any customization for us?
+------------------------------------------------------------
+Sorry, we can't make any special work. We support you about installation but we cannot develop for you. However we can only remove unwanted (useless) buttons when you purchase an “FPF Customization” https://www.2checkout.com/2co/buyer/purchase?sid=1247904&quantity=1&product_id=10
+
+
+* Is it possible to customize the right click menu options?
+------------------------------------------------------------
+There is FPF text link at right click menu in all versions. You don’t remove FPF text link in right click menu unless you have the source files.
+
+
+* What can I do with Source Codes?
+------------------------------------------------------------
+We show our online demos and some live users of FPF on the Online Demo page. http://www.flashpageflip.com/Online-Demo.asp Please look at them for features and customizations. Some people have bought source files to change as they wanted. FPF Source Codes are including all FLA files in addition to other files. You need Flash 8 or CS3 software for editing FLA files. You can make any changes when you purchase one of them. For instance, you can change all graphics, put your own background images, disable or remove buttons, or you can add your link when you have the source files.
+
+
+* Can I upgrade to Source Codes?
+------------------------------------------------------------
+If you want in the future you can possess the Source Files after paying the difference of prices.
+
+
+* Can I exchange my FPF version with other version?
+------------------------------------------------------------
+You can upgrade “ASP Personal License” to “ASP Enterprise License” or “PHP Professional license” to “PHP Version with Source Code” etc. But you cannot exchange Basic XML to Pro ASP or Pro ASP to Pro PHP, etc. because of they are different products.
+
+
+* Is there some way to preload the pages?
+------------------------------------------------------------
+Flash Page Flip firstly creates pages but doesn’t preload contents of pages. It loads when you open page. When you back to previous pages you see loaded contents. All versions are same however if you want to change you can edit and develop source codes of the FPF.
+
+
+* How can I develop Source Codes?
+------------------------------------------------------------
+Sorry, we support you about installation therefore we cannot develop it for you. There are so many comments in codes of FLA files. They can guide to you. Please pay attention while edit it. If you aren't advanced user please don't change complex codes in FLA file.
+
+
+* How is your product licensed?
+------------------------------------------------------------
+Each purchase provides you with a Single-User license. It means that customers can use it in their own works nevertheless in no way you don’t share any files of FPF. You can make unlimited flipping book on your one website when you buy Personal License. In other words, you are able to use FPF for unlimited publications in one website (1 domain name and its unlimited subdomain) with Personal Licenses. You can use unlimited FPF in up to ten websites (10 domain names) with Professional Licenses and in unlimited number of your sites with Enterprise License and Source Code Versions.
+
+
+* Will I receive product updates?
+------------------------------------------------------------
+The prices are valid for received product. We don’t guarantee new updates but perhaps we will inform you something new.
+
+
+For more please look at, http://www.flashpageflip.com/FAQ.asp?do=Show-All
+

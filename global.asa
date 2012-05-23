@@ -1,0 +1,46 @@
+<SCRIPT LANGUAGE=VBScript RUNAT=Server>
+
+Sub Application_OnStart
+	application.lock()
+		application("user_num")=0
+		application("user_group")=""
+		application("new_msg")=""
+		application("user_admin")=False
+	application.unlock()
+End Sub
+
+
+Sub Session_OnStart
+	Session("user_id")=Session.SessionID
+	Session("user_msg")="0"
+	Session("dis_action")=""
+	application.lock()
+		application("user_num")=application("user_num")+1	
+	application.unlock()
+End Sub
+
+
+Sub Session_OnEnd
+	dim ti_a
+	dim ti_ts, ti_t1, ti_t2
+	ti_ts=split(application("Chatext"),"{WOBR/}")
+	application("Chatext")=""
+	application.lock()
+		for ti_a=0 to ubound(ti_ts)
+			if left(ti_ts(ti_a),5)= "{WOC:" then
+				ti_t1=split(ti_ts(ti_a),"&_}")
+				ti_t2=split(ti_t1(0),":")
+				if ti_t2(1)<>Session.SessionID and ti_t2(2)<>Session.SessionID  then
+					application("Chatext")=application("Chatext") & ti_ts(ti_a) & "{WOBR/}"
+				end if
+			end if
+		next
+		application("user_num")=application("user_num")-1	
+	application.unlock()
+End Sub
+
+
+Sub Application_OnEnd
+End Sub
+
+</SCRIPT>

@@ -1,0 +1,12 @@
+<content width="400" height="300" bgcolor="cccccc" loadercolor="ffffff" bgimage="0s" panelcolor="585858" buttoncolor="585858" textcolor="d0e5f7" fullscreen="false" tellafriendmode="manual">
+	<page src="pages/01.jpg"/>
+	<page src="pages/02.jpg"/>
+	<page src="pages/03.jpg"/>
+	<page src="pages/04.jpg"/>
+	<page src="pages/05.jpg"/>
+	<page src="pages/06.jpg"/>
+	<page src="pages/07.jpg"/>
+	<page src="pages/08.jpg"/>
+	<page src="pages/09.jpg"/>
+	<page src="pages/10.jpg"/>
+</content>

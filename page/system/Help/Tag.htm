@@ -1,0 +1,30 @@
+﻿{WebOrigin:sitename/}
+{WebOrigin:siteurl/}
+{WebOrigin:now/}
+{WebOrigin:cms/}
+{WebOrigin:title/}
+{WebOrigin:keywords/}{WebOrigin:keyword/}
+{WebOrigin:description/}
+{WebOrigin:inst/}
+{WebOrigin:page/}
+{WebOrigin:guide name=""/}
+{WebOrigin:rnd/}
+{WebOrigin:rnd4/}
+{WebOrigin:rnd8/}
+{WebOrigin:sql cmd="select systemname from WebOriginsystem;"/}{WebOrigin:sql}...{/WebOrigin}
+[color=red]size[/color]{WebOrigin:title size="10"/}
+[color=red]left[/color]
+[color=red]mode[/color]{WebOrigin:date mode="yyyy-MM-dd hh:mm:ss"/}
+[color=red]code[/color]{WebOrigin:title code="htmlencode"/}
+[color=red]url[/color]{WebOrigin:keywords url="/page/article/search.asp?query="/}
+[color=red]width和height[/color]
+{WebOrigin:image width="100" height="80" /}
+[b]{WebOrigin:sql/}[/b]
+[color=red]1)/}[/color]
+{WebOrigin:sql cmd="select sum(*) from WebOriginart;"/}
+[color=red]2){WebOrigin:sql}...{/WebOrigin}[/color]
+{WebOrigin:sql cmd="select top 10 arttitle,artpath,artdate from WebOriginart order by artid desc;"}
+<p>arttitle：(WebOrigin:#0/)</p>
+<p>artpath：(WebOrigin:#1/)</p>
+<p>artdate：(WebOrigin:#2/)</p>
+{/WebOrigin}
